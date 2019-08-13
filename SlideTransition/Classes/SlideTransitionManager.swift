@@ -10,7 +10,7 @@ import UIKit
 @available(iOS 10.0, *)
 final class SlideTransitionManager: NSObject, UIViewControllerTransitioningDelegate {
     private(set) var configuration: SlideTransitionConfigurator
-    
+    private var scrollUpdater: ScrollViewUpdater?
     init(configuration: SlideTransitionConfigurator) {
         self.configuration = configuration
         super.init()
@@ -23,7 +23,19 @@ final class SlideTransitionManager: NSObject, UIViewControllerTransitioningDeleg
         pc.sourceController = source
         pc.cardAnimator = cardAnimator
         pc.dismissAreaHeight = configuration.dismissAreaHeight
+        
+        scrollUpdater = nil
+        let detector = ScrollViewDetector(with: presented)
+        
+        if let scrollView = detector.scrollView {
+            scrollUpdater = ScrollViewUpdater(with: presented.view, scrollView: scrollView)
+        }
+        
         return pc
+    }
+    
+    deinit {
+        scrollUpdater = nil
     }
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {

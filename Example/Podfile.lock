@@ -1,5 +1,5 @@
 PODS:
-  - SlideTransition (0.1.0)
+  - SlideTransition (0.1.1)
 
 DEPENDENCIES:
   - SlideTransition (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  SlideTransition: 3f6aade099ddaef9c8334de4cc6b2786c8c9832a
+  SlideTransition: 88e98d6a3f3615d402b5c0fdeaff897d22663682
 
 PODFILE CHECKSUM: 8d35cea3d759904a424841039d65d0550a633808
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.7.5

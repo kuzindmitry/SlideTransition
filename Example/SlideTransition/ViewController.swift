@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     enum ControllerType: String {
         case yellow = "YellowViewController"
         case blue = "BlueViewController"
+        case text = "TextViewController"
     }
     
     override func viewDidLoad() {
@@ -37,9 +38,13 @@ class ViewController: UIViewController {
         presentController(.blue)
     }
     
+    @IBAction func textButtonDidTap(_ sender: UIButton) {
+        presentController(.text)
+    }
+    
     private func presentController(_ controllerType: ControllerType) {
         guard let controller = storyboard?.instantiateViewController(withIdentifier: controllerType.rawValue) else { return }
-        let configuration = SlideTransitionConfigurator()
+//        let configuration = SlideTransitionConfigurator()
 //        configuration.
         slidePresent(controller, animated: true)
     }

@@ -295,6 +295,10 @@ private extension SlideTransitionAnimator {
                         targetCardPresentationController.fadeinHandle()
                     }
                     
+                    if self.configuration.hapticFeedbackWhenOpen {
+                        UIImpactFeedbackGenerator().impactOccurred()
+                    }
+                    
                     transitionContext.completeTransition(true)
                 }
             }

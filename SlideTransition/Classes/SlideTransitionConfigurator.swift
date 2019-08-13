@@ -33,6 +33,9 @@ public struct SlideTransitionConfigurator {
     ///    Set to false to disable interactive dismissal
     public var allowInteractiveDismissal = true
     
+    ///    Set to false to disable haptic feedback
+    public var hapticFeedbackWhenOpen = true
+    
     ///    Default initializer, with most suitable values
     init() {}
     
