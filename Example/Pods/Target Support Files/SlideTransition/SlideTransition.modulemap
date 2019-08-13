@@ -1,0 +1,6 @@
+framework module SlideTransition {
+  umbrella header "SlideTransition-umbrella.h"
+
+  export *
+  module * { export * }
+}

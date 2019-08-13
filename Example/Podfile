@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'SlideTransition_Example' do
+  pod 'SlideTransition', :path => '../'
+
+  target 'SlideTransition_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
